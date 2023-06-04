@@ -150,7 +150,13 @@ namespace WebApplication1.Controllers
         {
             return Ok(e);
         }
+        //custom model binder
 
+
+        public IActionResult custom([ModelBinder(typeof(custombinder))]string[] Name)
+        {
+            return Ok(Name);
+        }
 
     }
     
